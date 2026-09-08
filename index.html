@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abubakar Albakri — Computer Science, Manchester</title>
+<meta name="description" content="Computer science student at Manchester Metropolitan University. I build small systems that fix specific problems — encryption tools, Discord bots, scheduling apps.">
+
+<meta property="og:title" content="Abubakar Albakri — Computer Science, Manchester">
+<meta property="og:description" content="I build small systems that fix specific problems. Six of them are documented here.">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#EDEEF0">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23141A22'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23EDEEF0' text-anchor='middle'>A</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ─────────────────────────  MASTHEAD  ───────────────────────── -->
+<header class="masthead">
+  <a class="masthead__name" href="#top">
+    <span class="masthead__initial">A</span>
+    <span class="masthead__full">Abubakar Albakri</span>
+  </a>
+  <nav class="masthead__nav" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#record">Record</a>
+    <a href="#contact" class="masthead__contact">Get in touch</a>
+  </nav>
+  <button class="masthead__toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobilenav" id="mobileNav" hidden>
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#record">Record</a>
+  <a href="#contact">Get in touch</a>
+</div>
+
+<!-- ─────────────────────────  LEFT RAIL  ───────────────────────── -->
+<aside class="rail" aria-hidden="true">
+  <div class="rail__track">
+    <span class="rail__progress" id="railProgress"></span>
+  </div>
+  <ol class="rail__marks">
+    <li data-mark="top">Index</li>
+    <li data-mark="work">Work</li>
+    <li data-mark="about">About</li>
+    <li data-mark="record">Record</li>
+    <li data-mark="contact">Contact</li>
+  </ol>
+</aside>
+
+<main id="main">
+
+<!-- ─────────────────────────  HERO  ───────────────────────── -->
+<section class="hero" id="top">
+  <h1 class="hero__line">
+    <span class="wipe"><span>I build the tool</span></span>
+    <span class="wipe"><span>that should have</span></span>
+    <span class="wipe"><span>already existed.</span></span>
+  </h1>
+
+  <p class="hero__sub">
+    I'm a final-year computer science student in Manchester. Most of what I make
+    starts the same way — something at work, at university, or in a Discord server
+    is slower than it needs to be, so I build the thing that fixes it. Six of
+    those are documented below, with the reasoning behind each one.
+  </p>
+
+  <dl class="strip">
+    <div class="strip__cell">
+      <dt>Systems shipped</dt>
+      <dd><span class="count" data-to="6">6</span></dd>
+    </div>
+    <div class="strip__cell">
+      <dt>Azure certifications</dt>
+      <dd><span class="count" data-to="3">3</span></dd>
+    </div>
+    <div class="strip__cell">
+      <dt>Modules at first class</dt>
+      <dd><span class="count" data-to="7">7</span><span class="strip__of">/9</span></dd>
+    </div>
+    <div class="strip__cell">
+      <dt>Currently</dt>
+      <dd class="strip__text">Open to placements</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ─────────────────────────  WORK  ───────────────────────── -->
+<section class="section" id="work">
+  <div class="section__head">
+    <h2>Work</h2>
+    <p>Six systems, each built to remove a specific piece of friction. Open any
+       one for the problem it solves, how it's put together, and what I'd do next.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="entry entry--wide" data-project="securevault" tabindex="0" role="button" aria-label="Open SecureVault case study">
+      <div class="entry__top">
+        <h3>SecureVault</h3>
+        <span class="entry__year">2026</span>
+      </div>
+      <p class="entry__blurb">
+        A command-line password manager that encrypts everything with AES-256 and
+        keeps it on your own machine. Built after realising how many people I know
+        keep passwords in a notes app.
+      </p>
+      <ul class="entry__stack">
+        <li>Python</li><li>Fernet / AES-256</li><li>PBKDF2</li>
+      </ul>
+      <span class="entry__open">Read case study</span>
+    </article>
+
+    <article class="entry" data-project="worktrack" tabindex="0" role="button" aria-label="Open WorkTrack case study">
+      <div class="entry__top">
+        <h3>WorkTrack</h3>
+        <span class="entry__year">2026</span>
+      </div>
+      <p class="entry__blurb">
+        A clock-in app I built because the one at my job kept losing shifts.
+        Tap a shift to clock in, live countdown ring, late alerts, admin panel.
+      </p>
+      <ul class="entry__stack">
+        <li>React</li><li>JavaScript</li>
+      </ul>
+      <span class="entry__open">Read case study</span>
+    </article>
+
+    <article class="entry" data-project="mmubot" tabindex="0" role="button" aria-label="Open MMU Minecraft Society Bot case study">
+      <div class="entry__top">
+        <h3>MMU Society Bot</h3>
+        <span class="entry__year">2026</span>
+      </div>
+      <p class="entry__blurb">
+        The sixth-largest society at MMU was approving 273 members by hand. This
+        bot does verification, invite tracking, tickets and events instead.
+      </p>
+      <ul class="entry__stack">
+        <li>Java</li><li>JDA</li><li>Discord API</li>
+      </ul>
+      <span class="entry__open">Read case study</span>
+    </article>
+
+    <article class="entry" data-project="gradetracker" tabindex="0" role="button" aria-label="Open GradeTracker case study">
+      <div class="entry__top">
+        <h3>GradeTracker</h3>
+        <span class="entry__year">2026</span>
+      </div>
+      <p class="entry__blurb">
+        Student records and grades in a proper layered Java application, with
+        UK degree classification and CSV export for anyone who'd rather use Excel.
+      </p>
+      <ul class="entry__stack">
+        <li>Java</li><li>SQLite</li><li>JDBC</li>
+      </ul>
+      <span class="entry__open">Read case study</span>
+    </article>
+
+    <article class="entry entry--wide" data-project="sentiment" tabindex="0" role="button" aria-label="Open Azure Sentiment Analyser case study">
+      <div class="entry__top">
+        <h3>Azure Sentiment Analyser</h3>
+        <span class="entry__year">2026</span>
+      </div>
+      <p class="entry__blurb">
+        Runs text through Azure Cognitive Services for sentiment, key phrases and
+        aspect-level opinion mining. Written to prove the AI-900 certificate
+        corresponds to something I can actually do.
+      </p>
+      <ul class="entry__stack">
+        <li>Python</li><li>Azure Cognitive Services</li><li>NLP</li>
+      </ul>
+      <span class="entry__open">Read case study</span>
+    </article>
+
+    <article class="entry" data-project="dbdbot" tabindex="0" role="button" aria-label="Open DBD Bot case study">
+      <div class="entry__top">
+        <h3>DBD Bot</h3>
+        <span class="entry__year">2025</span>
+      </div>
+      <p class="entry__blurb">
+        A Discord bot for a Dead by Daylight community — searchable perk and
+        killer database, XP levelling, tickets and moderation.
+      </p>
+      <ul class="entry__stack">
+        <li>Node.js</li><li>Discord.js</li>
+      </ul>
+      <span class="entry__open">Read case study</span>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────  ABOUT  ───────────────────────── -->
+<section class="section section--about" id="about">
+  <div class="section__head">
+    <h2>About</h2>
+  </div>
+
+  <div class="about">
+    <div class="about__body">
+      <p class="about__lead">
+        I'm Abubakar Albakri, though almost everyone calls me Akira. I came to
+        computer science the long way round — I spent a year on a biomedical
+        sciences degree at Sheffield before admitting that the part of it I
+        actually enjoyed was the data analysis, and started again at Manchester
+        Metropolitan.
+      </p>
+      <p>
+        It turned out to be the right call. I'm now in my final year with first
+        class results in seven of nine modules, including algorithms and data
+        structures, databases, and web development. The lab-work habits carried
+        over better than I expected — writing things down properly, changing one
+        variable at a time, not trusting a result you can't reproduce.
+      </p>
+      <p>
+        Alongside the degree I've taken three Microsoft Azure certifications,
+        and I hold down two part-time roles — IT and customer support at a
+        training centre, and cleaning work on commercial sites. That leaves a
+        finite number of hours for everything else, which is probably why I
+        build the things I do: every project on this page removes a task
+        somebody was doing manually, including me.
+      </p>
+      <p>
+        Outside of it I played basketball through school and still do when I can.
+        I'm currently working through Spring Boot and Docker, and I'm looking for
+        a placement where I'd be writing software with people who are better at it
+        than I am.
+      </p>
+    </div>
+
+    <aside class="about__side">
+      <div class="fact">
+        <h4>Based in</h4>
+        <p>Manchester, UK</p>
+      </div>
+      <div class="fact">
+        <h4>Studying</h4>
+        <p>BSc Computer Science, Manchester Metropolitan University. Graduating 2027.</p>
+      </div>
+      <div class="fact">
+        <h4>Certified</h4>
+        <p>Azure Fundamentals (AZ&#8209;900), Azure AI Fundamentals (AI&#8209;900), Power BI Data Analyst Associate (PL&#8209;300)</p>
+      </div>
+      <div class="fact">
+        <h4>Working in</h4>
+        <p>Java, Python, C#, JavaScript, C++, SQL</p>
+      </div>
+      <div class="fact">
+        <h4>Languages</h4>
+        <p>English, native. Arabic, upper intermediate.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ─────────────────────────  RECORD  ───────────────────────── -->
+<section class="section" id="record">
+  <div class="section__head">
+    <h2>Record</h2>
+    <p>Education, results and work history.</p>
+  </div>
+
+  <div class="record">
+
+    <div class="record__row">
+      <div class="record__when">2024 — 2027</div>
+      <div class="record__what">
+        <h3>BSc Computer Science</h3>
+        <p class="record__where">Manchester Metropolitan University</p>
+        <table class="results">
+          <caption class="visually-hidden">Module results</caption>
+          <tbody>
+            <tr><td>Algorithms &amp; Data Structures</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Databases</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Graduate Skills</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Mathematics for Computer Science</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Programming</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Team Project</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Web Development</td><td class="results__g results__g--first">First</td></tr>
+            <tr><td>Computer Architecture</td><td class="results__g">2:1</td></tr>
+            <tr><td>Computer Networks</td><td class="results__g">2:1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="record__row">
+      <div class="record__when">2023 — 2024</div>
+      <div class="record__what">
+        <h3>BSc Biomedical Sciences</h3>
+        <p class="record__where">University of Sheffield</p>
+        <p class="record__note">
+          One year completed in human biology, physiology and research methods
+          before transferring to computer science. Laboratory work, data
+          interpretation and critical evaluation of published research.
+        </p>
+      </div>
+    </div>
+
+    <div class="record__row">
+      <div class="record__when">— 2023</div>
+      <div class="record__what">
+        <h3>Applied Science</h3>
+        <p class="record__where">Holy Cross Sixth Form College, Bury</p>
+        <table class="results">
+          <caption class="visually-hidden">Module results</caption>
+          <tbody>
+            <tr><td>Applied Science</td><td class="results__g results__g--first">A*</td></tr>
+            <tr><td>Laboratory Skills &amp; Research</td><td class="results__g results__g--first">A*</td></tr>
+            <tr><td>Scientific Analysis</td><td class="results__g">A</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="record__row">
+      <div class="record__when">2024 — now</div>
+      <div class="record__what">
+        <h3>IT Consultant &amp; Customer Support, part-time</h3>
+        <p class="record__where">Research &amp; Training Centre, Manchester</p>
+        <p class="record__note">
+          A training provider where I cover both the technical side and the
+          front desk. I look after the centre's computers and network, set up
+          and troubleshoot the equipment used in training sessions, and keep
+          course records and delegate data in order. On the support side I'm
+          the first point of contact for enquiries and bookings, which mostly
+          means explaining technical things to people who don't want a
+          technical answer. That has done more for how I write documentation
+          than anything on my degree has. The centre is currently rebranding
+          and relocating, and my role continues through the move.
+        </p>
+      </div>
+    </div>
+
+    <div class="record__row">
+      <div class="record__when">2023 — now</div>
+      <div class="record__what">
+        <h3>Cleaner, part-time</h3>
+        <p class="record__where">Indepth Managed Services, Manchester</p>
+        <p class="record__note">
+          Working to fixed standards and timeframes with minimal supervision
+          across commercial sites. Tracked and reordered stock, and covered for
+          colleagues during busy periods. It's also where WorkTrack came from —
+          the scheduling app we were given kept dropping shifts, so I wrote a
+          better one.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────  CONTACT  ───────────────────────── -->
+<section class="section section--contact" id="contact">
+  <div class="section__head">
+    <h2>Get in touch</h2>
+    <p>I'm looking for a summer placement or part-time development work. If
+       you've got something in mind, or you just want to talk about one of the
+       projects, send me a note.</p>
+  </div>
+
+  <div class="contact">
+    <form class="form" id="contactForm" novalidate>
+      <div class="field">
+        <label for="fname">Your name</label>
+        <input type="text" id="fname" name="name" autocomplete="name" required>
+        <span class="field__error" id="err-fname"></span>
+      </div>
+
+      <div class="field">
+        <label for="femail">Email</label>
+        <input type="email" id="femail" name="email" autocomplete="email" required>
+        <span class="field__error" id="err-femail"></span>
+      </div>
+
+      <div class="field">
+        <label for="fsubject">What's it about</label>
+        <select id="fsubject" name="subject">
+          <option value="Placement opportunity">Placement opportunity</option>
+          <option value="Part-time work">Part-time work</option>
+          <option value="A project on this site">A project on this site</option>
+          <option value="Something else">Something else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" name="message" rows="6" required></textarea>
+        <span class="field__error" id="err-fmessage"></span>
+      </div>
+
+      <button type="submit" class="btn" id="submitBtn">Send message</button>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+
+    <aside class="contact__direct">
+      <p class="contact__or">Or reach me directly</p>
+      <ul class="contact__list">
+        <li>
+          <span>Email</span>
+          <a href="mailto:bakri20041@outlook.com">bakri20041@outlook.com</a>
+        </li>
+        <li>
+          <span>Phone</span>
+          <a href="tel:+447920014710">+44 7920 014710</a>
+        </li>
+        <li>
+          <span>Code</span>
+          <a href="https://github.com/ekql-ops" target="_blank" rel="noopener">github.com/ekql-ops</a>
+        </li>
+        <li>
+          <span>Location</span>
+          <p>Manchester, United Kingdom</p>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>Abubakar Albakri, Manchester</p>
+  <p>Set in Archivo and Source Serif 4. Built by hand.</p>
+</footer>
+
+<!-- ─────────────────────────  MODAL  ───────────────────────── -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" data-close aria-label="Close case study">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </button>
+    <div class="modal__body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
