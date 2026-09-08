@@ -65,6 +65,7 @@
       standfirst: 'A clock-in app built because the one I was given at work kept losing shifts.',
       stack: ['React', 'JavaScript', 'CSS'],
       repo: 'https://github.com/ekql-ops/worktrack',
+      live: 'https://ekql-ops.github.io/worktrack/',
       sections: [
         { h: 'The problem',
           p: [`The scheduling app at my job was genuinely bad. Shifts would disappear from the list, clocking in took four taps through screens that weren't designed for a phone, and there was no way to tell at a glance whether you were running late. People kept a paper backup, which rather defeats the purpose of having an app.`,
@@ -256,6 +257,10 @@
     html += '<h4>Built with</h4><ul class="case__stack">';
     c.stack.forEach(function (t) { html += `<li>${esc(t)}</li>`; });
     html += '</ul>';
+
+    if (c.live) {
+      html += `<a class="case__link" href="${c.live}" target="_blank" rel="noopener">Try the live demo</a>`;
+    }
 
     if (c.repo) {
       html += `<a class="case__link" href="${c.repo}" target="_blank" rel="noopener">View the code on GitHub</a>`;

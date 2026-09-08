@@ -771,6 +771,8 @@ main {
   color: var(--ink-soft);
 }
 
+.case__link + .case__link { margin-left: 26px; }
+
 .case__link {
   display: inline-block;
   margin-top: 30px;
