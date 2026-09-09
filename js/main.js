@@ -63,7 +63,7 @@
       year: '2026',
       title: 'WorkTrack',
       standfirst: 'A clock-in app built because the one I was given at work kept losing shifts.',
-      stack: ['React', 'JavaScript', 'CSS'],
+      stack: ['React', 'Spring Boot', 'PostgreSQL', 'JWT auth', 'Docker', 'Fly.io'],
       repo: 'https://github.com/ekql-ops/worktrack',
       live: 'https://ekql-ops.github.io/worktrack/',
       sections: [
@@ -81,8 +81,16 @@
         { h: 'What I learned',
           p: [`This was the project that taught me component state properly. My first version held everything in one enormous top-level object and re-rendered the entire list every time a countdown ticked, once a second. Watching it stutter on an older phone was a more effective lesson in memoisation than any lecture.`,
               `It also taught me that a good interface is mostly about removing decisions. The original app wasn't missing features — it had more than mine. It just made you think at every step.`] },
+        { h: 'Giving it a real backend',
+          p: [`The first version kept every shift and session in React state, which meant a refresh threw away the shift someone was halfway through. Worse, the four accounts and their passwords were literals compiled into the JavaScript bundle — anyone who opened devtools could read them. It demoed well and it would not have survived contact with an actual workplace.`,
+              `So I wrote the API it was missing: Spring Boot and PostgreSQL, schema managed by Flyway, passwords stored only as BCrypt hashes, and JWT authentication where the role in the token decides what you can reach. An employee asking for the admin endpoints gets a 403, and there is a test that proves it.`,
+              `The decision I would actually talk about is a constraint. "One open session per employee" started as a PostgreSQL partial index — correct, but H2 cannot run one, so no test would ever have exercised it. I replaced it with a column holding the employee id while a session is open and NULL once it closes, with a plain UNIQUE on it. Both databases allow repeated NULLs, so the rule is enforced by the database and still covered by the suite. A second simultaneous clock-in fails at the database, not at a check that happened to run first.`],
+          list: ['26 tests, run against the same Flyway migration that runs in production',
+                 'The clock service takes an injected Clock, so tests place "now" mid-shift instead of sleeping',
+                 'Deployed on Fly.io with Postgres on Neon; the machine scales to zero when idle',
+                 'Integration tests caught a lazy-loading bug that only appeared once responses were built outside the transaction'] },
         { h: 'Next',
-          p: [`A real backend, since it currently persists in the browser. After that, shift swapping between staff, which is the feature people ask for most.`] }
+          p: [`Shift swapping between staff, which is the feature people ask for most. The demo also still runs on seeded sample data with its credentials shown on the login screen — fine for something you are invited to try, wrong for anything real.`] }
       ]
     },
 
