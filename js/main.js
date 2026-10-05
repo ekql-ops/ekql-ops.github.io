@@ -59,13 +59,13 @@
       ]
     },
 
-    worktracker: {
+    shiftpay: {
       year: '2026',
-      title: 'Work Tracker',
+      title: 'ShiftPay',
       standfirst: 'A desktop app for people paid by the shift. One tap a day, and it tells you what you are owed and when it actually lands.',
       stack: ['Python 3.10+', 'tkinter', 'PyInstaller', 'pytest / ruff', 'GitHub Actions'],
-      repo: 'https://github.com/ekql-ops/work-tracker',
-      download: 'https://github.com/ekql-ops/work-tracker/releases/latest',
+      repo: 'https://github.com/ekql-ops/shiftpay',
+      download: 'https://github.com/ekql-ops/shiftpay/releases/latest',
       sections: [
         { h: 'The problem',
           p: [`I am paid four-weekly for cleaning work, and the pay period does not line up with the calendar month. A period might run 14 September to 11 October and get paid on the 21st, which means that on any given day I had no straightforward way of knowing what I was owed.`,
