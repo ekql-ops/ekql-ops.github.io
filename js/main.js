@@ -59,6 +59,45 @@
       ]
     },
 
+    worktracker: {
+      year: '2026',
+      title: 'Work Tracker',
+      standfirst: 'A desktop app for people paid by the shift. One tap a day, and it tells you what you are owed and when it actually lands.',
+      stack: ['Python 3.10+', 'tkinter', 'PyInstaller', 'pytest / ruff', 'GitHub Actions'],
+      repo: 'https://github.com/ekql-ops/work-tracker',
+      download: 'https://github.com/ekql-ops/work-tracker/releases/latest',
+      sections: [
+        { h: 'The problem',
+          p: [`I am paid four-weekly for cleaning work, and the pay period does not line up with the calendar month. A period might run 14 September to 11 October and get paid on the 21st, which means that on any given day I had no straightforward way of knowing what I was owed.`,
+              `It got worse when I was off sick. Sick pay is a flat daily amount rather than my hourly rate, it is only payable on days I would have worked, and it arrives on a different schedule to the wages. Working it out on paper was error-prone enough that I once spotted a payslip crediting me three hours on a day I had not worked at all.`] },
+        { h: 'The design brief',
+          list: ['Logging a day is one tap, not a form',
+                 'It names the exact date it is asking about, so catching up after a few days away is unambiguous',
+                 'It never silently drops a day I failed to answer',
+                 'Sick pay is tracked separately from wages, never blended into one number',
+                 'Nothing about my own job is hardcoded — anyone else can set their own pattern'] },
+        { h: 'How it works',
+          p: [`Each weekday carries its own hourly rate. Leave a day blank and it is not a working day, so the app never asks about it — that one decision is what makes it work for a Sunday-only cleaner as readily as a Monday-to-Saturday one.`,
+              `Pay periods are anchored to a real date from a payslip rather than to the calendar. You give it the last day of a period and how many days later the money arrives, and it projects every future period and payday from there. The calendar view then colour-codes each day by what was logged, with the amount underneath, and marks paydays and any recurring benefit payment alongside.`] },
+        { h: 'The bug the tests found',
+          p: [`The app asks about any day you have not answered yet. The first version built that queue by starting from the most recent entry and walking forward, which seemed obviously correct and was not.`,
+              `Close the app halfway through catching up, and the next launch would start from the newest answer — silently skipping every day you had left unanswered behind it. Two days of real work vanished from my own records that way, with no error and nothing on screen to suggest anything was missing. Money I had earned simply was not counted.`,
+              `The fix was to scan the whole window for gaps instead of walking forward from the last entry. What I actually take from it is that the bug was invisible: no crash, no warning, just a number that was quietly too low. A test asserting that a gap in the middle gets picked up again is the only thing that would ever have caught it, and writing that test is what made me find it.`] },
+        { h: 'Shipping it as a real application',
+          p: [`A script someone has to run from a terminal is not something a person uses every night. It is packaged with PyInstaller into a Windows executable with its own icon and taskbar identity, so it can be pinned and opened with one click.`,
+              `That forced a decision I had got wrong at first: the data file originally sat next to the code, which breaks the moment the app is packaged or updated. It now lives in the user's own application data directory, written atomically so a crash mid-save cannot truncate it, and the app migrates older files forward on launch without ever re-pricing history that has already been logged.`],
+          list: ['57 tests covering pay periods, rate selection, the catch-up queue and the migrations',
+                 'CI runs on Windows and Linux across Python 3.10 and 3.12, plus ruff, on every push',
+                 'Tagging a release builds the Windows app in CI and attaches the zip automatically',
+                 'The data model has no UI imports, which is what makes any of it testable'] },
+        { h: 'What I got wrong',
+          p: [`I built it around my own job first and only generalised it afterwards, which meant a second pass to pull out every assumption I had baked in — my rates, my shift pattern, my employer's pay cycle, a benefit payment specific to the UK. Starting from "what varies between people" would have been quicker than retrofitting it.`,
+              `I was also careful about what the app claims to know. It tracks whatever sick pay rate you give it, but it deliberately does not try to implement statutory sick pay rules — waiting days, linked periods, qualifying conditions. Those vary by country and employer, and getting them silently wrong would be worse than not attempting them.`] },
+        { h: 'Next',
+          p: [`An optional nightly reminder, CSV export for checking a full year against payslips, and a macOS build — the app itself is already cross-platform, it is only the packaging that is Windows-specific so far.`] }
+      ]
+    },
+
     worktrack: {
       year: '2026',
       title: 'WorkTrack',
@@ -268,6 +307,10 @@
 
     if (c.live) {
       html += `<a class="case__link" href="${c.live}" target="_blank" rel="noopener">Try the live demo</a>`;
+    }
+
+    if (c.download) {
+      html += `<a class="case__link" href="${c.download}" target="_blank" rel="noopener">Download the app</a>`;
     }
 
     if (c.repo) {
